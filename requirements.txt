@@ -2,3 +2,4 @@ requests
 slack_sdk
 Flask
 slackeventsapi 
+python-dotenv 
