@@ -1,86 +1,95 @@
-# Fire Drill Bot
+# 🚒 Fire Drill Bot
 
-A simulated on-call fire drill bot for PagerDuty and Slack. Randomly triggers safe incidents, tracks response times, and posts weekly scores to Slack.
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
----
-
-## 🚀 Quick Start (No Coding Required)
-
-### 1. Download & Install
-
-1. **Download the bot files:**
-   - Click the green "Code" button on GitHub, then "Download ZIP".
-   - Unzip the file to your computer (e.g., Desktop).
-2. **Open a Terminal/Command Prompt:**
-   - On Mac: Open "Terminal" (search in Spotlight).
-   - On Windows: Open "Command Prompt" (search in Start Menu).
-3. **Go to the bot folder:**
-   - Type: `cd Desktop/fire-drill-bot` (or wherever you unzipped it)
-4. **Run the installer:**
-   - Type:
-     ```sh
-     bash install.sh
-     ```
-   - This will install everything you need (Python, dependencies, ngrok).
-
-### 2. Set Up Your Accounts
-
-- **PagerDuty:**
-  - Create a test service and API key (see below for details)
-- **Slack:**
-  - Create a Slack app and bot token (see below for details)
-
-### 3. Configure the Bot
-
-1. **Copy the example environment file:**
-   ```sh
-   cp .env.example .env
-   ```
-2. **Edit `.env` with your info:**
-   - Open `.env` in a text editor (double-click it)
-   - Fill in your PagerDuty and Slack info (see comments in the file)
-
-### 4. Start the Bot
-
-1. **Run the bot:**
-   ```sh
-   bash start.sh
-   ```
-2. **Follow the on-screen instructions:**
-   - The bot will guide you to set up ngrok and Slack URLs
-   - You’ll see a link to add the slash command to Slack
-
-### 5. Use in Slack
-
-- In Slack, type `/trigger-drill` in any channel where your bot is present
-- You’ll get real-time updates and a summary with feedback buttons
+> **Automate on-call fire drills with PagerDuty and Slack. Random, safe, and fun!**
 
 ---
 
-## 📦 What’s Included
-- `install.sh` — One-command installer for all dependencies
-- `start.sh` — One-command launcher for the bot and ngrok
-- `.env.example` — Example config file for your secrets
-- `README.md` — This guide
-- All bot code (no coding required to use)
+## 📋 Table of Contents
+- [Features](#features)
+- [Quick Start](#quick-start)
+- [Screenshots](#screenshots)
+- [How It Works](#how-it-works)
+- [Configuration](#configuration)
+- [Manual Setup](#manual-setup)
+- [FAQ](#faq)
+- [Security](#security)
+- [Contributors](#contributors)
+
+---
+
+## ✨ Features
+- 🔥 Randomly triggers PagerDuty incidents during business hours (9am–5pm, Mon–Fri)
+- 👤 Assigns to the on-call engineer
+- ⏱️ Tracks time to acknowledge (TTA) and resolve (TTR)
+- 🏆 Scores and reports responses
+- 💬 Posts summary and interactive feedback to Slack
+- 🛠️ One-command install and launch scripts
+
+---
+
+## 🚀 Quick Start
+
+### 1. **Download & Install**
+```sh
+# Download and unzip the repo, then:
+bash install.sh
+```
+
+### 2. **Configure**
+```sh
+cp .env.example .env
+# Edit .env and fill in your PagerDuty and Slack info
+```
+
+### 3. **Start the Bot**
+```sh
+bash start.sh
+```
+- Follow the on-screen instructions to set up Slack URLs
+- Add the slash command and interactivity URLs to your Slack app
+
+### 4. **Use in Slack**
+- Type `/trigger-drill` in any channel where your bot is present
+- Get real-time updates and a summary with feedback buttons
+
+---
+
+## 🖼️ Screenshots
+> _Add your screenshots here!_
+
+---
+
+## ⚙️ How It Works
+1. **Random Fire Drill**: Bot triggers a PagerDuty incident at random during business hours
+2. **On-Call Assignment**: Assigns to the current on-call engineer
+3. **Slack Updates**: Posts incident status and summary to Slack
+4. **Scoring**: Tracks TTA/TTR and scores the response
+5. **Feedback**: Users can give instant feedback via Slack buttons
+
+---
+
+## 🛠️ Configuration
+- `.env` file holds all secrets (see `.env.example`)
+- All scripts and code are at the repo root for easy access
+- No coding required to use
 
 ---
 
 ## 🛠️ Manual Setup (for reference)
-
-// ... (rest of the detailed setup instructions as previously provided) ...
+See the full instructions in the README below if you want to set up manually or customize further.
 
 ---
 
-## 📝 FAQ
-
-**Q: Do I need to know Python or code?**
+## ❓ FAQ
+**Q: Do I need to know Python or code?**  
 A: No! Just follow the steps above and copy-paste commands.
 
-**Q: What if I get stuck?**
+**Q: What if I get stuck?**  
 A: Ask your team’s tech lead or open an issue on GitHub for help.
 
-**Q: Is this safe for production?**
+**Q: Is this safe for production?**  
 A: Use only with test services and get team buy-in before public reporting.
 
 ---
@@ -88,6 +97,12 @@ A: Use only with test services and get team buy-in before public reporting.
 ## 🔒 Security
 - Never share your `.env` file or API keys
 - Use only test services for drills
+
+---
+
+## 👥 Contributors
+- [@sidverma-pd](https://github.com/sidverma-pd)
+- [Your Name Here]
 
 ---
 
