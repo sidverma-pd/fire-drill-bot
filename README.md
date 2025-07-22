@@ -61,29 +61,47 @@ bash start.sh
 
 ---
 
-## 🗝️ How to Get Your .env Values
+## 🗝️ How to Get Your .env Values (Step-by-Step)
 
 ### PagerDuty
-- **PD_API_KEY**: 
+- **PD_API_KEY** (PagerDuty API Access Key):
   1. Log in to PagerDuty.
-  2. Go to **Configuration > API Access Keys**.
+  2. In the top menu, go to **Integrations > API Access Keys**.
   3. Click **Create New API Key** (choose "Read-write access").
-  4. Copy the key and paste it in your `.env`.
-- **PD_SERVICE_ID**:
-  1. Go to **Configuration > Services** and select your test service.
-  2. The Service ID is in the URL (after `/services/`) or under the service's settings/API tab.
-- **PD_USER_ID**:
-  1. Go to **People > Users** and click your user.
-  2. The User ID is in the URL (after `/users/`).
+  4. Copy the key shown and paste it in your `.env` as `PD_API_KEY`.
+  5. _Reference: The API Access Keys page is under Integrations in the main navigation._
+
+- **PD_SERVICE_ID** (Service ID):
+  1. In the top menu, click **Services**.
+  2. Click the name of your test service (e.g., "On Call Bot").
+  3. Click **Service Settings** (gear icon or tab).
+  4. Look at your browser’s address bar: the Service ID is the code after `/services/` (e.g., `PA12345`).
+  5. _Reference: The Service ID is visible in the URL when viewing your service._
+
+- **PD_USER_ID** (User ID):
+  1. In the top menu, click **People**.
+  2. Click your name (or the user you want to use).
+  3. Click **User Settings**.
+  4. Look at your browser’s address bar: the User ID is the code after `/users/` (e.g., `PABCDEF`).
+  5. _Reference: The User ID is visible in the URL when viewing your user profile._
 
 ### Slack
-- **SLACK_TOKEN**:
-  1. Go to [Slack API: Your Apps](https://api.slack.com/apps) and select your app (or create one).
-  2. Under **OAuth & Permissions**, install the app to your workspace.
-  3. Copy the **Bot User OAuth Token** (starts with `xoxb-`).
-- **SLACK_SIGNING_SECRET**:
-  1. In your Slack app settings, go to **Basic Information**.
-  2. Copy the **Signing Secret**.
+- **SLACK_TOKEN** (Bot User OAuth Token):
+  1. Go to [Slack API: Your Apps](https://api.slack.com/apps) and select your app.
+  2. In the left sidebar, click **OAuth & Permissions**.
+  3. Under **Scopes**, add at least these Bot Token Scopes: `chat:write`, `commands`, `channels:read` (and `groups:read` for private channels).
+  4. At the top of the OAuth & Permissions page, click **Install App to Workspace** (or **Reinstall** if already installed).
+  5. After installation, you’ll see **Bot User OAuth Token** (starts with `xoxb-...`).
+  6. Copy this token and paste it in your `.env` as `SLACK_TOKEN`.
+  7. _Reference: This is NOT the Client Secret or Signing Secret. It is the Bot User OAuth Token shown after installing the app._
+
+- **SLACK_SIGNING_SECRET** (Signing Secret):
+  1. In your Slack app settings, click **Basic Information** in the left sidebar.
+  2. Scroll down to **App Credentials**.
+  3. Click **Show** next to **Signing Secret**.
+  4. Copy this value and paste it in your `.env` as `SLACK_SIGNING_SECRET`.
+  5. _Reference: The Signing Secret is in the App Credentials section of Basic Information._
+
 - **SLACK_CHANNEL** (optional):
   1. Use the Slack channel name (e.g., `#oncall-fire-drills`).
   2. If not set, defaults to `#oncall-fire-drills`.
