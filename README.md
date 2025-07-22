@@ -61,6 +61,35 @@ bash start.sh
 
 ---
 
+## 🗝️ How to Get Your .env Values
+
+### PagerDuty
+- **PD_API_KEY**: 
+  1. Log in to PagerDuty.
+  2. Go to **Configuration > API Access Keys**.
+  3. Click **Create New API Key** (choose "Read-write access").
+  4. Copy the key and paste it in your `.env`.
+- **PD_SERVICE_ID**:
+  1. Go to **Configuration > Services** and select your test service.
+  2. The Service ID is in the URL (after `/services/`) or under the service's settings/API tab.
+- **PD_USER_ID**:
+  1. Go to **People > Users** and click your user.
+  2. The User ID is in the URL (after `/users/`).
+
+### Slack
+- **SLACK_TOKEN**:
+  1. Go to [Slack API: Your Apps](https://api.slack.com/apps) and select your app (or create one).
+  2. Under **OAuth & Permissions**, install the app to your workspace.
+  3. Copy the **Bot User OAuth Token** (starts with `xoxb-`).
+- **SLACK_SIGNING_SECRET**:
+  1. In your Slack app settings, go to **Basic Information**.
+  2. Copy the **Signing Secret**.
+- **SLACK_CHANNEL**:
+  1. Use the Slack channel name (e.g., `#oncall-fire-drills`).
+  2. The bot must be invited to this channel.
+
+---
+
 ## ⚙️ How It Works
 1. **Random Fire Drill**: Bot triggers a PagerDuty incident at random during business hours
 2. **On-Call Assignment**: Assigns to the current on-call engineer
