@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environment files
+.env
+.env.*
+
+# macOS
+.DS_Store
+
+# Logs
+flask.log
+ngrok.log
+
+# Virtual environments
+venv/
+
+# VSCode
+.vscode/
+
+# Misc
+*.swp 

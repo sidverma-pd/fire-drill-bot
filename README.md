@@ -49,21 +49,22 @@ slack_app.py ──▶ pagerduty_client.py ──▶ PagerDuty
    cp .env.example .env
    # Edit .env and fill in your PagerDuty and Slack info
    ```
-3. **Start Flask:**
+3. **Start the bot:**
    ```sh
-   export FLASK_APP=slack_app.py
-   flask run --host=0.0.0.0 --port=5050
+   bash start.sh
    ```
-4. **Start ngrok manually in a new terminal:**
+   - This will start Flask in the background and print instructions for running ngrok and updating your Slack URLs.
+4. **In a new terminal, run ngrok:**
    ```sh
    ngrok http 5050
    ```
    - Copy the HTTPS URL from the ngrok output (e.g., `https://abc12345.ngrok-free.app`)
-5. **Update your Slack app:**
-   - Set your Slash Command Request URL to: `<ngrok-url>/slack/command`
-   - Set your Interactivity URL to: `<ngrok-url>/slack/interactivity`
-   - Add required bot token scopes: `chat:write`, `commands`, etc.
-   - Install the app to your workspace
+5. **Update your Slack app URLs:**
+   - Go to [api.slack.com](https://api.slack.com/) → Your Apps → Fire Drill Bot
+   - Under **Slash Commands**, set the Request URL to: `<ngrok-url>/slack/command`
+   - Under **Interactivity & Shortcuts**, set the Request URL to: `<ngrok-url>/slack/interactivity`
+   - (e.g., if ngrok gives `https://abc12345.ngrok-free.app`, use `https://abc12345.ngrok-free.app/slack/command`)
+   - **Note:** If you restart ngrok, the URL will change. Always update your Slack app with the new URL!
 6. **Trigger a drill in Slack:**
    - Type `/trigger-drill` in any channel where your bot is present
 
