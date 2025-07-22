@@ -82,6 +82,23 @@ See `.env.example` for all required variables. Key ones:
 
 ---
 
+## 📊 What Does the Slack Summary Show?
+
+After each fire drill, the bot posts a summary in Slack with:
+- **On-Call:** Who was assigned the incident
+- **Incident ID:** PagerDuty incident identifier
+- **Created:** When the incident was triggered
+- **Acknowledged:** When and by whom the incident was acknowledged (or 'Not acknowledged')
+- **Resolved:** When and by whom the incident was resolved (or 'Not resolved')
+- **TTA (Time to Acknowledge):** Seconds from trigger to acknowledge (if acknowledged)
+- **TTR (Time to Resolve):** Seconds from trigger to resolve (if resolved)
+- **Score:** Calculated based on TTA and TTR
+- **Feedback buttons:** Users can give instant feedback on the drill
+
+This helps your team track readiness, response speed, and gather feedback for continuous improvement.
+
+---
+
 ## ✨ Features
 - 100+ realistic, randomly selected fire drill scenarios (with urgency)
 - Trigger drills on demand from Slack with `/trigger-drill`
