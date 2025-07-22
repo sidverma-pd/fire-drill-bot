@@ -57,7 +57,7 @@ bash start.sh
 ---
 
 ## 🖼️ Screenshots
-> _Add your screenshots here!_
+> _Add screenshots here!_
 
 ---
 
@@ -102,7 +102,6 @@ A: Use only with test services and get team buy-in before public reporting.
 
 ## 👥 Contributors
 - [@sidverma-pd](https://github.com/sidverma-pd)
-- [Your Name Here]
 
 ---
 
