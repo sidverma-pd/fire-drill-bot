@@ -84,9 +84,10 @@ bash start.sh
 - **SLACK_SIGNING_SECRET**:
   1. In your Slack app settings, go to **Basic Information**.
   2. Copy the **Signing Secret**.
-- **SLACK_CHANNEL**:
+- **SLACK_CHANNEL** (optional):
   1. Use the Slack channel name (e.g., `#oncall-fire-drills`).
-  2. The bot must be invited to this channel.
+  2. If not set, defaults to `#oncall-fire-drills`.
+  3. The bot must be invited to this channel.
 
 ---
 
